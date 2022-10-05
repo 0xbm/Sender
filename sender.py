@@ -33,7 +33,7 @@ class Attachment(Send):
 
 sender_email = input("Type your adress: ")
 recipient_email = input("Type recipient adress: ")
-sender_passwd = input("Type your password(your token from gmail account): ")
+sender_passwd = input("Type your password (your token from gmail account): ")
 
 message = EmailMessage()
 sender = sender_email
@@ -49,7 +49,8 @@ send = Send()
 text = Text()
 attachment = Attachment()
 while True:
-    choose = input("1-text or enter-attachment?")
+    choose = input("""1 for only text, \nenter for text and attachment,
+q for quit\n:""")
 
     if choose == "q":
         break
