@@ -44,21 +44,18 @@ message["Subject"] = "No Subject"
 body = input("Your message: ")
 message.set_content(body)
 
-
 send = Send()
 text = Text()
 attachment = Attachment()
+
 while True:
     choose = input("""1 for only text, \nenter for text and attachment,
 q for quit\n:""")
-
     if choose == "q":
         break
-
     elif choose == "1":
         text.push()
         print("Mail sended.")
-
     else:
         attachment.push_attachment()
         print("Attachment sended.")
