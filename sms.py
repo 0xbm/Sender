@@ -12,3 +12,4 @@ message = client.messages.create(
 )
 
 print(message.sid)
+print("Text message sended.")
