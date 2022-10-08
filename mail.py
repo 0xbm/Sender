@@ -60,4 +60,4 @@ b for back\n: """
         attachment.push_attachment()
         print("Attachment sended.")
     else:
-        print("Choice between 1 or 2 or q")
+        print("Choice between 1 or 2 or q: ")
