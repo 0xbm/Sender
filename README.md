@@ -1,7 +1,8 @@
 Sender is application for send @mail and/or text messages(SMS).
+
 To open application please exec only sender.py
 
-@email:
+EMAIL:
 You can send text or text with attachment.
 To send emails using Gmail, you'll need to set up an app password. This is pretty simple:
 First: go to 'myaccount.google.com/security'
