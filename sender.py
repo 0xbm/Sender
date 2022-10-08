@@ -7,4 +7,4 @@ while True:
     elif choice == "2":
         exec(open("sms.py").read())
     else:
-        print("Choice between 1 or 2 or q")
+        print("Choose between 1 or 2 or q")
