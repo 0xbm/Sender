@@ -1,4 +1,5 @@
 Sender is application for send @mail and/or text messages(SMS).
+To open application please exec only sender.py
 
 @email:
 You can send text or text with attachment.
@@ -8,4 +9,7 @@ Second: turn on 2fa
 Third: generate password to your application (it's not your default password) 
 
 SMS:
-in progress
+You must register on site www.twilio.com and register your phone number to get:
+* account_sid 
+* auth_token 
+* service_sid
