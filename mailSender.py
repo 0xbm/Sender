@@ -32,9 +32,9 @@ class Attachment(Send):
 
 
 message = EmailMessage()
-sender = input("Type your adress: ")
+sender = input("Type your address: ")
 sender_passwd = input("Type your password (your token from gmail account): ")
-recipient = input("Type recipient adress: ")
+recipient = input("Type recipient address: ")
 message["From"] = sender
 message["To"] = recipient
 message["Subject"] = input("Type email subject: ")
@@ -48,11 +48,9 @@ attachment = Attachment()
 
 while True:
     choice = input(
-        """1 for only text, \n2 for text and attachment,
-b for back\n: """
-    )
+        "1 for only text, \n2 for text and attachment, b for back\n: ")
     if choice == "b":
-        break
+        import main
     elif choice == "1":
         text.push()
         print("Mail sended.")
