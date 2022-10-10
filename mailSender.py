@@ -4,7 +4,7 @@ from email.message import EmailMessage
 
 
 class Send:
-    def connect(self):
+    def mail_Info(self):
         smtp = smtplib.SMTP("smtp.gmail.com", 587)
         smtp.starttls()
         smtp.set_debuglevel(1)
@@ -16,7 +16,7 @@ class Send:
 
 class Text(Send):
     def push(self):
-        super().connect()
+        super().mail_Info()
 
 
 class Attachment(Send):
@@ -28,7 +28,7 @@ class Attachment(Send):
             message.add_attachment(
                 file.read(), maintype=mime_type, subtype=mime_subtype
             )
-        super().connect()
+        super().mail_Info()
 
 
 message = EmailMessage()
@@ -50,7 +50,7 @@ while True:
     choice = input(
         "1 for only text, \n2 for text and attachment, b for back\n: ")
     if choice == "b":
-        import main
+        exec(open('main.py').read())
     elif choice == "1":
         text.push()
         print("Mail sended.")
