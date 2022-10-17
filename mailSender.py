@@ -47,10 +47,9 @@ attachment = Attachment()
 
 
 while True:
-    choice = input(
-        "1 for only text, \n2 for text and attachment, b for back\n: ")
+    choice = input("1 for only text, \n2 for text and attachment, b for back\n: ")
     if choice == "b":
-        exec(open('main.py').read())
+        exec(open("main.py").read())
     elif choice == "1":
         text.push()
         print("Mail sended.")
@@ -58,4 +57,4 @@ while True:
         attachment.push_attachment()
         print("Attachment sended.")
     else:
-        print("Choice between 1 or 2 or b: ")
+        print("Choose between 1 or 2 or b: ")
