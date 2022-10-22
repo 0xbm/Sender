@@ -1,12 +1,17 @@
-choice = input("Would you like send 1.EMAIL, 2.SMS or q for quit: ")
+from sms.smsSender import Sms
+from mail.mailSender import Mail
 
-while True:
+
+def asd(self):
     choice = input("Would you like send 1.EMAIL, 2.SMS? or q for quit: ")
-    if choice == "q":
-        break
-    elif choice == "1":
-        exec(open("mailSender.py").read())
-    elif choice == "2":
-        exec(open("smsSender.py").read())
-    else:
-        print("Choose between 1 or 2 or q: ")
+    match choice:
+        case "1":
+            Mail.start(Mail)
+        case "2":
+            Sms.push_sms(Sms)
+        case "q":
+            breakpoint
+            print("QUIT")
+
+
+asd(asd)
