@@ -1,60 +1,1 @@
-import smtplib
-import mimetypes
-from email.message import EmailMessage
-
-
-class Send:
-    def mail_Info(self):
-        smtp = smtplib.SMTP("smtp.gmail.com", 587)
-        smtp.starttls()
-        smtp.set_debuglevel(1)
-
-        smtp.login(sender, sender_passwd)
-        smtp.send_message(message)
-        smtp.quit()
-
-
-class Text(Send):
-    def push(self):
-        super().mail_Info()
-
-
-class Attachment(Send):
-    def push_attachment(self):
-        file_path = input("Paste file PATH to send: ")
-        mime_type, _ = mimetypes.guess_type(file_path)
-        mime_type, mime_subtype = mime_type.split("/")
-        with open(file_path, "rb") as file:
-            message.add_attachment(
-                file.read(), maintype=mime_type, subtype=mime_subtype
-            )
-        super().mail_Info()
-
-
-message = EmailMessage()
-sender = input("Type your address: ")
-sender_passwd = input("Type your password (your token from gmail account): ")
-recipient = input("Type recipient address: ")
-message["From"] = sender
-message["To"] = recipient
-message["Subject"] = input("Type email subject: ")
-body = input("Your message: ")
-message.set_content(body)
-
-send = Send()
-text = Text()
-attachment = Attachment()
-
-
-while True:
-    choice = input("1 for only text, \n2 for text and attachment, b for back\n: ")
-    if choice == "b":
-        exec(open("main.py").read())
-    elif choice == "1":
-        text.push()
-        print("Mail sended.")
-    elif choice == "2":
-        attachment.push_attachment()
-        print("Attachment sended.")
-    else:
-        print("Choose between 1 or 2 or b: ")
+import smtplibfrom email.mime.multipart import MIMEMultipartfrom email.mime.text import MIMETextfrom email.mime.base import MIMEBasefrom email import encodersfrom email.message import EmailMessage# from main import asdclass Mail:    def start(self):        choice = input("1 for only text, \n2 for text and attachment, \nb for back: ")        match choice:            case "b":                print("BLE")                # asd()            case "1":                mail.send_text()            case "2":                mail.send_attachment()    def send_text(self):        mail_content = input("Your message: ")        sender_address = input("Type your address: ")        sender_pass = input("Type your password (your token from gmail account): ")        receiver_address = input("Type recipient address: ")        message = EmailMessage()        message["From"] = sender_address        message["To"] = receiver_address        message["Subject"] = input("Type email subject: ")        message.set_content(mail_content)        session = smtplib.SMTP("smtp.gmail.com", 587)        session.starttls()        session.login(sender_address, sender_pass)        session.send_message(message)        session.quit()        print("Email sended.")    def send_attachment(self):        mail_content = input("Your message: ")        sender_address = input("Type your address: ")        sender_pass = input("Type your password (your token from gmail account): ")        receiver_address = input("Type recient address: ")        message = MIMEMultipart()        message["From"] = sender_address        message["To"] = receiver_address        message["Subject"] = input("Type email subject: ")        message.attach(MIMEText(mail_content, "plain"))        attach_file_name = input("Paste file PATH to send: ")        attach_file = open(attach_file_name, "rb")        payload = MIMEBase("application", "octate-stream")        payload.set_payload((attach_file).read())        encoders.encode_base64(payload)        payload.add_header(            "Content-Decomposition", "attachment", filename=attach_file_name        )        message.attach(payload)        session = smtplib.SMTP("smtp.gmail.com", 587)        session.starttls()        session.login(sender_address, sender_pass)        text = message.as_string()        session.sendmail(sender_address, receiver_address, text)        session.quit()        print("Attachment sended.")mail = Mail()
