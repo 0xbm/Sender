@@ -14,7 +14,7 @@ class Sms:
         )
 
         print(message.sid)
-        print("Text message sended.")
+        print("\x1b[5;30;42mSMS sended.")
 
 
 sms = Sms()
