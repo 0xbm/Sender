@@ -1,4 +1,4 @@
-Sender is application for send @mail and/or text messages(SMS).
+Sender is an application for send @mail and/or text messages(SMS).
 
 To open application please exec only main.py
 
@@ -10,7 +10,7 @@ Second: turn on 2fa
 Third: generate password to your application (it's not your default password) 
 
 SMS:
-You must register on site www.twilio.com and register your phone number to get:
+You must register on site www.twilio.com and add your phone number to get:
 * account_sid 
 * auth_token 
 * service_sid
